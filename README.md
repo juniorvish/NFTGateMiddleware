@@ -2,7 +2,7 @@
 
 This is a Next.js middleware for token-gating a route based on the user holding a certain NFT using Holaplex Hub APIs.
 
-## Getting Started
+## Setup
 
 1. Clone the repository:
 
@@ -10,48 +10,49 @@ This is a Next.js middleware for token-gating a route based on the user holding 
 git clone https://github.com/juniorvish/NFTGateMiddleware.git
 ```
 
-2. Install dependencies:
+2. Install the dependencies:
 
 ```bash
-cd NFTGateMiddleware
 npm install
 ```
 
-3. Configure the middleware by setting the `project` and `drop` in `config.js`:
+## Configuration
+
+You can configure the middleware by modifying the `config.js` file. Here you can set the project and drop.
+
+## Usage
+
+To use the middleware, import it in your `index.js` file and use it to token-gate a route.
 
 ```javascript
-module.exports = {
-  project: 'your_project_id',
-  drop: 'your_drop_id',
-};
+import { NFTGateMiddleware } from '../middleware/tokenGate.js';
+
+// Token-gate a route
+app.use('/protectedRoute', NFTGateMiddleware);
 ```
 
-4. Start the development server:
+## Running the Application
+
+To run the application, use the following command:
 
 ```bash
 npm run dev
 ```
 
-5. Open your browser and navigate to the token-gated route at `http://localhost:3000/gatedRoute`.
+This will start the application on `http://localhost:3000`.
 
-## Usage
+## Styling
 
-To use the NFTGateMiddleware in your own Next.js project, follow these steps:
+If this is a web app, it uses Tailwind CSS for styling. You can modify the styles in the `styles` directory.
 
-1. Copy the `middleware.js`, `config.js`, and `holaplexAPI.js` files to your project's `lib` directory.
+## API
 
-2. Import the `tokenGate` function from `middleware.js` and use it in your API route:
+The middleware interacts with the Holaplex Hub API. It checks if a user owns a specific NFT and token-gates a route based on this.
 
-```javascript
-import tokenGate from '../lib/middleware';
+## Contributing
 
-export default tokenGate(async (req, res) => {
-  // Your protected route logic here
-});
-```
+Contributions are welcome. Please submit a pull request or open an issue.
 
-3. Configure the `project` and `drop` in `config.js` as described in the Getting Started section.
+## License
 
-4. Make sure to have Tailwind CSS installed and configured if your project requires CSS.
-
-That's it! Your route is now token-gated based on the user holding a specific NFT using Holaplex Hub APIs.
+MIT
