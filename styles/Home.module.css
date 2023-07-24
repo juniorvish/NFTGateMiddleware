@@ -1,0 +1,31 @@
+.container {
+  @apply flex flex-col items-center justify-center min-h-screen py-2;
+}
+
+.main {
+  @apply flex flex-col items-center justify-center flex-1 px-20 text-center;
+}
+
+.footer {
+  @apply w-full h-24 border-t border-gray-200 flex justify-center items-center;
+}
+
+.title {
+  @apply text-2xl md:text-3xl lg:text-4xl;
+}
+
+.description {
+  @apply text-lg;
+}
+
+.code {
+  @apply p-6 mt-6 text-left border w-96 rounded-xl;
+}
+
+.card {
+  @apply flex flex-col justify-center items-center max-w-md mx-auto m-2 bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl;
+}
+
+.cardContent {
+  @apply flex flex-col items-center text-center;
+}
